@@ -37,12 +37,15 @@ namespace AntiDuplicadosXX
             } //get index of last row with text
 
             for (int mainIndex = 2; mainIndex <= lastIndex; mainIndex++)
-            {
                 if (cellsInSheet["C" + mainIndex].Value == cellsInSheet["C" + mainIndex + 1])
                 {
+                    if (cellsInSheet["G" + mainIndex].Value == cellsInSheet["G" + mainIndex + 1].Value)
+                    {
+
+                    }
                     var counter = 1;
                     var auxIndex = mainIndex;
-                    while (cellsInSheet["C" + auxIndex].Value == cellsInSheet["C" + auxIndex + 1].Value)
+                    while (cellsInSheet["C" + auxIndex].Value.Equals(cellsInSheet["C" + auxIndex + 1].Value))
                     {
                         counter++;
                         auxIndex++;
